@@ -250,3 +250,91 @@
 .sub-menu .pic-box:last-child{
     margin: 0px;
 }
+
+/* 轮播图 */
+.slider-box {
+    margin-right:10px;
+
+}
+.slider-box .slider{
+    width: 590px;
+    height: 470px;
+    position: relative;
+    /* 不能溢出，在相框内部 */
+    overflow: hidden;
+}
+
+.slider-box .slider ul{
+    position: absolute;
+    /* 设置行内元素便于dom中的style读取到left    left: -590px; */
+    display: inline-flex;
+    top: 0px;
+    
+    width: 500%;
+    height: 100%;   
+}
+.search-box .slider ul li{
+    float: left;
+}
+
+.slider-box .left-box{
+    background: rgba(0, 0,0,0.2);
+    position: absolute;
+    top:45%;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-box .right-box{
+    background: rgba(0, 0,0,0.2);
+    position: absolute;
+    top:45%;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-box .left-box, .slider-box .right-box span{
+    font-size: 22px;
+}
+
+.slider-box .index-box{
+    position: absolute;
+    /* 百分比更好进行适配 */
+    bottom: 3%;
+    left: 10%;
+    
+}
+
+.slider-box .index-box >ol{
+    height: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(0, 0,0,0.6);
+}
+
+.slider-box .index-box >ol > li{
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: #ffffff;
+   list-style: none;
+   cursor: pointer;
+
+}
+
+.slider-box .index-box >ol > li.active{
+    background: #e1251b;
+}
