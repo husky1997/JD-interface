@@ -14,6 +14,7 @@ class Slider{
         this.sliders = this.picBox.children.length
 
         this.init()
+        this.auto = null
     }
     init(){
 
@@ -22,6 +23,8 @@ class Slider{
         this.initPoint()
         this.copyPic()
         this.leftRight()
+        // 播放函数
+        this.play()
     }
 
     // 初始化小圆点
@@ -160,5 +163,29 @@ class Slider{
 
 
     }
+
+    play(){
+        // 每隔一段时间点击右侧切换按钮
+        this.auto = setInterval(() => {
+            this.box.querySelector(".right-box").click()
+        },2000) 
+
+
+        // 鼠标移入终止自动播放
+        this.box.addEventListener("mouseenter" , () => {
+            clearInterval(this.auto)
+        })
+       
+        // 鼠标移出开始轮播
+        this.box.addEventListener("mouseleave" , () => {
+            this.auto = setInterval(() => {
+                this.box.querySelector(".right-box").click()
+            },2000) 
+        }) 
+
+    }
+
+
+    // ad-box
 
 }
